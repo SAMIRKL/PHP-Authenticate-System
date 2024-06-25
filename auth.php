@@ -35,13 +35,14 @@ class Authorize {
 
 			$_SESSION['userinfo']['last_request'] = time();
 			$_SESSION['userinfo']['ip']           = self::getIPAddress();
-			$_SESSION['lastToken'] = $_COOKIE['token'] ?? '';
+			$_SESSION['lastToken']                = $_COOKIE['token'] ?? '';
 			if ( $username && $password ) {
 				$_SESSION['userinfo']['username'] = $username;
 				$_SESSION['userinfo']['password'] = $password;
-				$current_token     = self::hash( $_SESSION['userinfo'] );
+				$current_token                    = self::hash( $_SESSION['userinfo'] );
 				setcookie( 'token', $current_token, time() + ( 1200 * 24 ), "/" );
 			}
+
 			return 1;
 
 
@@ -65,21 +66,21 @@ class Authorize {
 			         && $_SESSION['lastToken'] != $_COOKIE['token'];
 
 			if ( ! $valid ) {
-				$result= 0;
+				$result = 0;
 
 			} else {
-				$result= 1;
+				$result = 1;
 			}
 		}
-		if ($result ?? 0) {
-			self::Auth($token['username'], $token['password']) ?? null;
+		if ( $result ?? 0 ) {
+				self::Auth( $token['username'], $token['password'] ) ?? null;
 
 
 		} else {
 			self::Auth();
 		}
+
 		return $result ?? 0;
-//
 
 	}
 
@@ -87,11 +88,9 @@ class Authorize {
 	static function getIPAddress() {
 		if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) ) {
 			$ip = $_SERVER['HTTP_CLIENT_IP'];
-		}
-		elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
+		} elseif ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) {
 			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-		}
-		else {
+		} else {
 			$ip = $_SERVER['REMOTE_ADDR'];
 		}
 
