@@ -5,24 +5,34 @@ require_once 'route.php';
 session_start();
 
 $Router = new Routers();
-$Router->addRoute('GET', '/', function () {
+$Router->addRoute( 'GET', '/', function () {
 	echo 'OK';
-});
+} );
 
-$Router->addRoute('GET', '/admin/', function () {
-	if (Authorize::verifyIdentity() ) {
+$Router->addRoute( 'GET', '/admin/', function () {
+//	var_dump($_SESSION);
+//	exit();
+	if ( Authorize::verifyIdentity() ) {
 		echo 'OK';
 	} else {
-		echo 'NOT_OK';
+		echo '<b>Need Login</b><br><a href="/login/">Go to Login Page</a>';
 	}
-});
-$Router->addRoute('GET', '/login/{username}/{password}', function ($username, $password) {
+} );
+$Router->addRoute( 'GET', '/login/{username}/{password}', function ( $username, $password ) {
 //	if (isset($_GET['username']) and isset($_GET['password'])) {
-	Authorize::Auth($username, $password);
+	Authorize::auth( $username, $password );
 	echo 'OK';
 
 //	}
-});
+} );
+$Router->addRoute( 'GET', '/login/', function () {
+	if ( Authorize::verifyIdentity() ) {
+		echo '<b>You Already Logged in</b>';
+	} else {
+		echo '<b>Set username and password</b>';
+	}
+
+} );
 
 try {
 	$Router->matchRoute();
