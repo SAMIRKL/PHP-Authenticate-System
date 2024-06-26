@@ -23,14 +23,8 @@ class Authorize {
 	 * @throws Exception
 	 */
 	public static function auth( string|bool $username = false, string|bool $password = false ): void {
-		if ( session_status() !== PHP_SESSION_ACTIVE ) {
-			throw new Exception( 'Enable/Start Session' );
-		}
 
-		if ( ! isset( $_SESSION['userinfo'] ) ) {
-			$_SESSION['userinfo'] = [];
-		}
-
+		$_SESSION['userinfo']                 ??= [];
 		$_SESSION['userinfo']['last_request'] = time();
 		$_SESSION['userinfo']['ip']           = self::getIPAddress();
 		$_SESSION['lastToken']                = $_COOKIE['token'] ?? '';
