@@ -1,11 +1,11 @@
-<div style="text-align: center">
+<div align="center" style="text-align: center">
 
 # PHP JWT Authorization Class
 ### Secure | Easy to Use | Session Management | Token Validation | IP Verification
 ###### Perfect for Managing Authentication and Authorization
 </div>
 <br />
-<div style="text-align: center">
+<div align="center" style="text-align: center">
 
 ![PHP Version](https://img.shields.io/badge/php-7.4%20|%208.3-blue?style=for-the-badge&color=%388E3C)
 ![PHP Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&color=%388E3C)
@@ -15,7 +15,7 @@
 
 </div>
 
-<div style="text-align: center">
+<div align="center" style="text-align: center">
 
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/t/samirkl/PHP-Authenticate-System?style=for-the-badge&color=%23303F9F)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/samirkl/PHP-Authenticate-System?style=for-the-badge&color=%23303F9F)
