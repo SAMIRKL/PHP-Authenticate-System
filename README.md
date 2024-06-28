@@ -8,6 +8,7 @@
 <div style="text-align: center">
 
 ![PHP Version](https://img.shields.io/badge/php-7.4%20|%208.3-blue?style=for-the-badge&color=%388E3C)
+![PHP Version](https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&color=%388E3C)
 ![GitHub License](https://img.shields.io/github/license/samirkl/PHP-Authenticate-System?style=for-the-badge&color=%388E3C)
 ![Packagist Downloads](https://img.shields.io/packagist/dt/samirkl/PHP-Authenticate-System?style=for-the-badge&color=%388E3C)
 ![GitHub Repo stars](https://img.shields.io/github/stars/samirkl/PHP-Authenticate-System?style=for-the-badge&color=%388E3C)
