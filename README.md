@@ -8,17 +8,17 @@
 <div align="center" style="text-align: center">
 
 ![PHP Version](https://img.shields.io/badge/php-^7.4%20|%20^8.0-blue?style=for-the-badge&color=%388E3C)
-![GitHub License](https://img.shields.io/github/license/your-username/your-repo-name?style=for-the-badge&color=%388E3C)
-![Packagist Downloads](https://img.shields.io/packagist/dt/your-username/your-repo-name?style=for-the-badge&color=%388E3C)
-![GitHub Repo stars](https://img.shields.io/github/stars/your-username/your-repo-name?style=for-the-badge&color=%388E3C)
+![GitHub License](https://img.shields.io/github/license/SAMIRKL/PHP-Authenticate-System?style=for-the-badge&color=%388E3C)
+![Packagist Downloads](https://img.shields.io/packagist/dt/SAMIRKL/PHP-Authenticate-System?style=for-the-badge&color=%388E3C)
+![GitHub Repo stars](https://img.shields.io/github/stars/SAMIRKL/PHP-Authenticate-System?style=for-the-badge&color=%388E3C)
 
 </div>
 
 <div align="center" style="text-align: center">
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/t/your-username/your-repo-name?style=for-the-badge&color=%23303F9F)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/your-username/your-repo-name?style=for-the-badge&color=%23303F9F)
-![GitHub Discussions](https://img.shields.io/github/discussions/your-username/your-repo-name?style=for-the-badge&color=%23303F9F)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/t/SAMIRKL/PHP-Authenticate-System?style=for-the-badge&color=%23303F9F)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SAMIRKL/PHP-Authenticate-System?style=for-the-badge&color=%23303F9F)
+![GitHub Discussions](https://img.shields.io/github/discussions/SAMIRKL/PHP-Authenticate-System?style=for-the-badge&color=%23303F9F)
 ![Languages](https://img.shields.io/badge/01-languages?label=languages&style=for-the-badge&color=%23303F9F)
 
 </div>
