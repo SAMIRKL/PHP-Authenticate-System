@@ -1,5 +1,20 @@
 {
+    "name": "samirkl/authenticate-system",
+    "description": "The PHP JWT Authorization Class provides a straightforward way to manage user authentication and authorization using JSON Web Tokens (JWT). This class is designed to handle token generation, validation, and user session management seamlessly, ensuring secure and efficient authentication for your application.",
+    "type": "library",
     "require": {
         "firebase/php-jwt": "^6.10"
-    }
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Samirkl\\AuthenticateSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samir",
+            "email": "76884552+SAMIRKL@users.noreply.github.com"
+        }
+    ]
 }
