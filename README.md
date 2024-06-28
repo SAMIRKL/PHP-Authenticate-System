@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" style="text-align: center">
 
 # PHP JWT Authorization Class
 ### Secure | Easy to Use | Session Management | Token Validation | IP Verification
