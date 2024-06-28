@@ -5,7 +5,7 @@ use Firebase\JWT\Key;
 
 
 class Authorize {
-	private static string $JWTKey = 'Laxo';
+	private static string $JWTKey = 'your-key';
 
 	public static function hash( string|array $value ): string {
 		return bin2hex( JWT::encode( $value, self::$JWTKey, 'HS256' ) );
