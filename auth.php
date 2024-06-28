@@ -3,7 +3,6 @@
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
 
-require_once 'vendor/autoload.php';
 
 class Authorize {
 	private static string $JWTKey = 'Laxo';
@@ -20,26 +19,30 @@ class Authorize {
 	}
 
 	/**
+	 * @param array|bool $protectedData Data of use must be correct like username, password, name, phone number, ...
+	 *
 	 * @throws Exception
 	 */
-	public static function auth( string|bool $username = false, string|bool $password = false ): void {
+	public static function auth( array|bool $protectedData = false ): void {
 
 		$_SESSION['userinfo']                 ??= [];
 		$_SESSION['userinfo']['last_request'] = time();
 		$_SESSION['userinfo']['ip']           = self::getIPAddress();
 		$_SESSION['lastToken']                = $_COOKIE['token'] ?? '';
 
-		if ( $username && $password ) {
-			$_SESSION['userinfo']['username'] = $username;
-			$_SESSION['userinfo']['password'] = $password;
-			$current_token                    = self::hash( $_SESSION['userinfo'] );
-			$_SESSION['current_token']        = $current_token;
+		if ( $protectedData ) {
+			$_SESSION['userinfo']['protectedData'] = $protectedData;
+			$current_token                         = self::hash( $_SESSION['userinfo'] );
+			$_SESSION['current_token']             = $current_token;
 			setcookie( 'token', $current_token, time() + 28800, "/" );
 		}
 
 	}
 
 	/**
+	 * verify identity of user
+	 * @param bool $isApi if set to true, token will be updated after authentication
+	 *
 	 * @throws Exception
 	 */
 	public static function verifyIdentity( bool $isApi = false ): bool {
@@ -48,7 +51,7 @@ class Authorize {
 
 		if ( $tokenData && self::isValidToken( $tokenData ) ) {
 			if ( $isApi ) {
-				self::auth( $tokenData['username'], $tokenData['password'] );
+				self::auth( $tokenData['protectedData'] );
 			}
 
 			return true;
@@ -90,12 +93,11 @@ class Authorize {
 	}
 
 	private static function isValidToken( array $tokenData ): bool {
-		return isset( $tokenData['username'], $tokenData['password'], $tokenData['last_request'], $tokenData['ip'] ) &&
+		return isset( $tokenData['protectedData'], $tokenData['last_request'], $tokenData['ip'] ) &&
 		       ( time() - $tokenData['last_request'] >= 1 ) &&
 		       ( $tokenData['ip'] === self::getIPAddress() ) &&
 		       ( $_SESSION['lastToken'] !== $_COOKIE['token'] ) &&
-		       ( $tokenData['username'] === $_SESSION['userinfo']['username'] ) &&
-		       ( $tokenData['password'] === $_SESSION['userinfo']['password'] ) &&
+		       ( $tokenData['protectedData'] === $_SESSION['userinfo']['protectedData'] ) &&
 		       ( $_SESSION['current_token'] === $_COOKIE['token'] );
 	}
 
