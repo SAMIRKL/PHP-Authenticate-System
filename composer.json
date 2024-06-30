@@ -1,0 +1,22 @@
+{
+    "name": "laxo/authecticate-system",
+    "description": "The PHP JWT Authorization Class provides a straightforward way to manage user authentication and authorization using JSON Web Tokens (JWT). This class is designed to handle token generation, validation, and user session management seamlessly, ensuring secure and efficient authentication for your application.",
+    "type": "libarary",
+    "require": {
+        "firebase/php-jwt": "^6.10"
+    },
+    "require-dev": {
+        "firebase/php-jwt": "^6.10"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Laxo\\AuthecticateSystem\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Samir"
+        }
+    ]
+}
