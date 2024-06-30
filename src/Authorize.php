@@ -1,4 +1,5 @@
 <?php
+
 namespace Laxo\AuthecticateSystem;
 
 use Firebase\JWT\JWT;
